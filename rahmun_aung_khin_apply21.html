@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.6">
+    <title>PeoplesMortgage</title>
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+    <link rel="apple-touch-icon" href="http://www.peoplesmortgage.com/wp-content/themes/builder/library/images/apple-icon-touch.png">
+    <link rel="icon" href="http://www.peoplesmortgage.com/wp-content/themes/builder/favicon.png?v=2">
+  </head>
+  <body class="text-center">
+    <div class="cover-container d-flex w-100 p-3 mx-auto flex-column main-background text-light">
+      <main role="main" class="inner cover" style="z-index: 50;">
+        <h1 class="jumbotron-heading">If you are renting, when is your lease up?</h1>
+        <br/>
+        <div class="form-group">
+          <select class="form-control" id="lease_time" name="lease_time">
+            <option value="Not renting">Not renting</option>
+            <option value="Month-to-month">Month-to-month</option>
+            <option value="1-2 months">1-2 months</option>
+            <option value="3-6 months">3-6 months</option>
+            <option value="7-12 months">7-12 months</option>
+          </select>
+          <br/><br/>
+          <a class="btn btn-primary float-left" href="rahmun_aung_khin_apply22.html" role="button" onclick="localStorage.leaseTime = document.getElementById('lease_time').value;">Continue &raquo;</a>
+        </div>
+      </main>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="/docs/4.2/assets/js/vendor/jquery-slim.min.js"><\/script>')</script><script src="bootstrap.bundle.min.js"></script>
+  </body>
+</html>

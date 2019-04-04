@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.6">
+    <title>PeoplesMortgage</title>
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+    <link rel="apple-touch-icon" href="http://www.peoplesmortgage.com/wp-content/themes/builder/library/images/apple-icon-touch.png">
+    <link rel="icon" href="http://www.peoplesmortgage.com/wp-content/themes/builder/favicon.png?v=2">
+  </head>
+  <body class="text-center">
+    <div class="cover-container d-flex w-100 p-3 mx-auto flex-column main-background text-light">
+      <main role="main" class="inner cover" style="z-index: 50;">
+        <h1 class="jumbotron-heading">Do you have any questions or comments?</h1>
+        <br/>
+        <div class="form-group">
+          <textarea name="comments" rows="8" cols="50" class="form-control" id='comments'></textarea>
+          <br/><br/>
+          <a class="btn btn-success float-left mx-3" role="button" id="finish_button">Finish</a>
+        </div>
+      </main>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="/docs/4.2/assets/js/vendor/jquery-slim.min.js"><\/script>')</script><script src="bootstrap.bundle.min.js"></script>
+    <script>
+      $(function() {
+        document.getElementById('finish_button').onclick = function() {
+          localStorage.comments = document.getElementById('comments').value;
+
+          $.ajax(
+            {
+              url: "https://hooks.zapier.com/hooks/catch/1391192/xre748/", 
+              data: {
+                "propertyType": localStorage.propertyType,
+                "purchaseTimeframe": localStorage.purchaseTimeframe,
+                "city": localStorage.city,
+                "state": localStorage.state,
+                "firstName": localStorage.firstName,
+                "lastName": localStorage.lastName,
+                "email": localStorage.email,
+                "phone": localStorage.phone,
+                "to": "jbrisbin@peoplesmortgage.com",
+                "currentAddress": localStorage.currentAddress,
+                "birth": localStorage.birth,
+                "employer": localStorage.employer,
+                "jobPosition": localStorage.jobPosition,
+                "jobLength": localStorage.jobLength,
+                "spouse": localStorage.spouse,
+                "coName": localStorage.coName,
+                "coBirth": localStorage.coBirth,
+                "coEmployer": localStorage.coEmployer,
+                "coPosition": localStorage.coPosition,
+                "coJobLength": localStorage.coJobLength,
+                "hasRealtor": localStorage.hasRealtor,
+                "salePrice": localStorage.salePrice,
+                "highestPayment": localStorage.highestPayment,
+                "leaseTime": localStorage.leaseTime,
+                "currentPayment": localStorage.currentPayment,
+                "savings": localStorage.savings,
+                "credit": localStorage.credit,
+                "comments": localStorage.comments,
+                "referrer": localStorage.referrer
+              },
+              success: function(result) {
+                window.location.href = "sheff_brisbin_success.html";
+              }
+            }
+          );
+        }
+      });
+    </script>
+  </body>
+</html>

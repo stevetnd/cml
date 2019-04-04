@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.6">
+    <title>PeoplesMortgage</title>
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+    <link rel="apple-touch-icon" href="http://www.peoplesmortgage.com/wp-content/themes/builder/library/images/apple-icon-touch.png">
+    <link rel="icon" href="http://www.peoplesmortgage.com/wp-content/themes/builder/favicon.png?v=2">
+  </head>
+  <body class="text-center">
+    <div class="cover-container d-flex w-100 p-3 mx-auto flex-column main-background text-light">
+      <main role="main" class="inner cover" style="z-index: 50;">
+        <h1 class="jumbotron-heading">How much is your current rent/housing payment?</h1>
+        <br/>
+        <div class="form-group">
+          <select class="form-control" id="current_payment" name="current_payment">
+            <option value="< $1,000">< $1,000</option>
+            <option value="$1,001 - $1,500">$1,001 - $1,500</option>
+            <option value="$1,501 - $2,000">$1,501 - $2,000</option>
+            <option value="$2,001 - $3,000">$2,001 - $3,000</option>
+            <option value="$3,000+">$3,000+</option>
+          </select>
+        </div>
+        <br/><br/>
+        <a class="btn btn-primary float-left mx-3" href="danny_thompson_apply23.html" role="button" onclick="localStorage.currentPayment = document.getElementById('current_payment').value;">Continue &raquo;</a>
+      </main>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="/docs/4.2/assets/js/vendor/jquery-slim.min.js"><\/script>')</script><script src="bootstrap.bundle.min.js"></script>
+  </body>
+</html>

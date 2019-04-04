@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.6">
+    <title>PeoplesMortgage</title>
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+    <link rel="apple-touch-icon" href="http://www.peoplesmortgage.com/wp-content/themes/builder/library/images/apple-icon-touch.png">
+    <link rel="icon" href="http://www.peoplesmortgage.com/wp-content/themes/builder/favicon.png?v=2">
+  </head>
+  <body class="text-center">
+    <div class="cover-container d-flex w-100 p-3 mx-auto flex-column main-background text-light">
+      <main role="main" class="inner cover" style="z-index: 50;">
+        <h1 class="jumbotron-heading">What is your phone number?</h1>
+        <br/>
+        <div class="form-group form-inline">
+          <input type="text" pattern="[0-9]{3}" class="form-control mx-auto phone-input" maxlength="3" name="phone1" required id="phone1">&nbsp;&nbsp;-&nbsp;&nbsp;<input type="text" pattern="[0-9]{3}" class="form-control mx-auto phone-input" maxlength="3" name="phone2" required id="phone2">&nbsp;&nbsp;-&nbsp;&nbsp;<input type="text" pattern="[0-9]{4}" class="form-control mx-auto phone-input" maxlength="4" name="phone3" required id="phone3">
+        </div>
+        <br/><br/>
+        <a class="btn btn-primary float-left mx-3" role="button" id="email_button">Continue &raquo;</a>
+      </main>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="/docs/4.2/assets/js/vendor/jquery-slim.min.js"><\/script>')</script><script src="bootstrap.bundle.min.js"></script>
+    <script>
+      $(function() {
+        $(".phone-input").keyup(function () {
+          if (this.value.length == this.maxLength) {
+            var $next = $(this).next('.phone-input');
+            if ($next.length) {
+              $(this).next('.phone-input').focus();
+            } else {
+              $(this).blur();
+            }
+          }
+        });
+
+
+        document.getElementById('email_button').onclick = function() {
+          localStorage.phone = document.getElementById('phone1').value + document.getElementById('phone2').value + document.getElementById('phone3').value;
+
+          $.ajax(
+            {
+              url: "https://hooks.zapier.com/hooks/catch/1391192/xrgiuh/", 
+              data: {
+                "propertyType": localStorage.propertyType,
+                "purchaseTimeframe": localStorage.purchaseTimeframe,
+                "city": localStorage.city,
+                "state": localStorage.state,
+                "name": localStorage.firstName + " " + localStorage.lastName,
+                "email": localStorage.email,
+                "phone": localStorage.phone,
+                "hasRealtor": localStorage.hasRealtor,
+                "salePrice": localStorage.salePrice,
+                "highestPayment": localStorage.highestPayment,
+                "leaseTime": localStorage.leaseTime,
+                "currentPayment": localStorage.currentPayment,
+                "savings": localStorage.savings,
+                "credit": localStorage.credit,
+                "to": "beckypatton@peoplesmortgage.com"
+              },
+              success: function(result) {
+                window.location.href = "becky_patton_apply7.html";
+              }
+            }
+          );
+        }
+      });
+    </script>
+  </body>
+</html>
